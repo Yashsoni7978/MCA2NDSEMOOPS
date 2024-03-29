@@ -1,0 +1,150 @@
+#FIRST PROGRAM
+class Student {
+    String name;
+    String rollNumber;
+    String phoneNumber;
+    String address;
+
+    public Student(String name, String rollNumber, String phoneNumber, String address) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Address: " + address);
+    }
+}
+
+public class Main{
+    public static void main(String[] args) {
+        Student student1 = new Student("Sam", "101", "1234567890", "Address 1");
+        Student student2 = new Student("John", "102", "9876543210", "Address 2");
+
+        System.out.println("Student 1 Details:");
+        student1.displayDetails();
+
+        System.out.println("\nStudent 2 Details:");
+        student2.displayDetails();
+    }
+}
+
+#SECOND PROGRAM
+
+public class Calculator {
+    public int add(int num1, int num2) {
+        return num1 + num2;
+    }
+
+    public int multiply(int num1, int num2) {
+        return num1 * num2;
+    }
+
+    public int add(int... nums) {
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    public int multiply(int... nums) {
+        int product = 1;
+        for (int num : nums) {
+            product *= num;
+        }
+        return product;
+    }
+}
+
+ class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        
+        System.out.println("Sum of 2 and 3: " + calc.add(2, 3));
+        System.out.println("Product of 2 and 3: " + calc.multiply(2, 3));
+        System.out.println("Sum of 2, 3, and 4: " + calc.add(2, 3, 4));
+        System.out.println("Product of 2, 3, and 4: " + calc.multiply(2, 3, 4));
+    }
+}
+
+#THIRD PROGRAM
+public class OverloadingExample {
+
+    // Method Overloading
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        // Method Overloading
+        System.out.println("Sum of integers: " + add(5, 7));
+        System.out.println("Sum of doubles: " + add(3.5, 2.5));
+
+        // Constructor Overloading
+        OverloadingExample obj1 = new OverloadingExample();
+        OverloadingExample obj2 = new OverloadingExample(10);
+        OverloadingExample obj3 = new OverloadingExample(20, 30);
+    }
+
+    // Constructor Overloading
+    public OverloadingExample() {
+        System.out.println("Default constructor");
+    }
+
+    public OverloadingExample(int num) {
+        System.out.println("Constructor with one parameter: " + num);
+    }
+
+    public OverloadingExample(int num1, int num2) {
+        System.out.println("Constructor with two parameters: " + num1 + ", " + num2);
+    }
+
+    @Override
+    public String toString() {
+        return "OverloadingExample []";
+    }
+}
+#FORTH PROGRAM
+
+public class bird {
+
+    String name;
+
+    // Constructor with no parameters
+    public bird() {
+        this.name = "Unknown";
+    }
+
+    // Constructor with one parameter
+    public bird(String name) {
+        this.name = name;
+    }
+
+    // Constructor with two parameters
+    public bird(String name, int count) {
+        this.name = name;
+        System.out.println("Number of " + name + " birds: " + count);
+    }
+
+    public static void main(String[] args) {
+        bird bird1 = new bird();
+        System.out.println("Name of bird: " + bird1.name);
+
+        bird bird2 = new bird("Sparrow");
+        System.out.println("Name of bird: " + bird2.name);
+
+        bird bird3 = new bird("Parrot", 5);
+        System.out.println("Name of bird: " + bird3.name);
+    }
+}
+
+
